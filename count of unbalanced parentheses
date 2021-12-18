@@ -1,0 +1,31 @@
+//check balanced parentheses and return count of unbalanced parentheses
+
+package com.javacollection;
+
+public class JavaIOApp {
+
+	private static int minParen(String name) {
+
+		int bal = 0, temp = 0;
+		for (int i = 0; i < name.length(); i++) {
+			bal += name.charAt(i) == '(' ? 1 : -1;
+			if (bal == -1) {
+				temp += 1;
+				bal += 1;
+			}
+		}
+
+		return bal + temp;
+	}
+
+//driver code
+
+	public static void main(String[] argd) {
+
+		String str = "(())))))";
+
+		System.out.println("Total missing parenthesis: " + minParen(str));
+
+	}
+
+}
