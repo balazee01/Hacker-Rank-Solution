@@ -1,0 +1,59 @@
+//Count duplicate elements in list hackerrank solution in java
+
+package com.javacollection;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class JavaIOApp {
+	
+	public static int count(List<Integer> arr){
+		
+		int count=0;
+		int total=0;	
+		
+		HashMap<Integer,Integer> map=new HashMap<>();
+		
+		for(int i=0;i<arr.size();i++) {
+			map.put(arr.get(i),arr.get(i));
+		}
+		
+		for(int i : map.keySet()) {
+			for(int j=0;j<arr.size();j++) {
+				if(i==arr.get(j)) {	
+					count++;
+				}	
+			}
+			if(count>1)
+				total++;
+			count=0;
+		}
+		return total;
+	}
+	
+  
+  //driver code
+	public static void main(String[] argd) {
+	
+		List<Integer> list=new ArrayList<>();
+		list.add(2);
+		list.add(3);
+		list.add(5);
+		list.add(4);
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		list.add(3);
+
+		
+		int a=count(list);
+		
+		System.out.println(a);
+		
+		
+		
+		
+	
+  }
+}
