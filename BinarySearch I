@@ -6,7 +6,7 @@ public class BinarySearch {
 	
 	private static int binarySearch(int[] arr, int low,int high,int element) {
 			
-		if(high!=low || element==arr[low]) {
+		if(high>=low) {
 			
 			int mid=(low+high)/2;
 			
